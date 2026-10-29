@@ -1,9 +1,0 @@
-UPLOAD THESE THREE FILES TO YOUR GITHUB REPOSITORY ROOT:
-index.html
-style.css
-script.js
-
-Also upload your photo as Harshi1.jpeg and your resume as Harshi_Resume.pdf to the same root folder.
-In GitHub: repository > Add file > Upload files > select these files > Commit changes.
-In Settings > Pages: Source = Deploy from a branch, Branch = main, Folder = /(root), Save.
-Website: https://harshithabhaskar123.github.io/portfolio/
