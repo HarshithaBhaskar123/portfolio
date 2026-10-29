@@ -1,0 +1,54 @@
+
+const typing = document.getElementById("typing");
+
+const roles = [
+  "Computer Science Student",
+  "Web Developer",
+  "Java Programmer",
+  "Technology Enthusiast"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeText() {
+  const current = roles[roleIndex];
+  typing.textContent = current.substring(0, charIndex);
+
+  if (!deleting && charIndex < current.length) {
+    charIndex++;
+    setTimeout(typeText, 100);
+  } else if (!deleting) {
+    deleting = true;
+    setTimeout(typeText, 1300);
+  } else if (charIndex > 0) {
+    charIndex--;
+    setTimeout(typeText, 50);
+  } else {
+    deleting = false;
+    roleIndex = (roleIndex + 1) % roles.length;
+    setTimeout(typeText, 250);
+  }
+}
+
+typeText();
+
+const menuBtn = document.getElementById("menu-btn");
+const navbar = document.getElementById("navbar");
+
+menuBtn.addEventListener("click", () => {
+  navbar.classList.toggle("open");
+});
+
+document.querySelectorAll("nav a").forEach(link => {
+  link.addEventListener("click", () => {
+    navbar.classList.remove("open");
+  });
+});
+
+document.getElementById("theme-btn").addEventListener("click", () => {
+  document.body.classList.toggle("light");
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
